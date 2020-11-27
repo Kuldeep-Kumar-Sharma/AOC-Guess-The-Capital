@@ -22,11 +22,11 @@ app.intent("guess.fallback", (conv) => {
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
-
+let answer = "";
 function genreateRandomCountryQuestion() {
   let randomCountry = getRndInteger(0, 244);
   let country = COUNTRY_CAPITAL[randomCountry].country;
-  return `What is the Capital of ` + capital;
+  return `What is the Capital of ` + country;
 }
 
 app.intent("guess.start", (conv) => {
@@ -42,6 +42,7 @@ app.intent("guess.start", (conv) => {
     `Welcome to Guess The Capital Game !! Let's start by 
     guessing the capital of any country I ask from you. You can go wrong twice only.`
   );
+  conv.ask(genreateRandomCountryQuestion());
 });
 
 app.intent("guess.capital", (conv, params) => {
@@ -53,18 +54,9 @@ app.intent("guess.capital", (conv, params) => {
     );
     return;
   }
-  if (params.alphabet.charCodeAt(0) == 122) {
-    conv.ask(` This is ` + images.IMAGES[index].alphabet);
-    conv.ask(
-      new BasicCard({
-        title: images.IMAGES[index].alphabet,
-        image: new Image({
-          url: constants.BASE_IMG_URL + images.IMAGES[index].img,
-          alt: images.IMAGES[index].alphabet,
-        }),
-        display: "CROPPED",
-      })
-    );
+  if (params.capital == answer) {
+    conv.ask(`Congratulation's you gave the right answer!`);
+    conv.ask(`Here is the next Question` + genreateRandomCountryQuestion());
     conv.close(
       `Great You Reached the Last Alphabet,You Remeber it all! Well Done. Bye for now, See you later`
     );
