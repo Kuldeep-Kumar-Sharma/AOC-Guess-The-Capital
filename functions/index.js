@@ -23,6 +23,7 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 let answer = "";
+let answer_count = 4;
 function genreateRandomCountryQuestion() {
   let randomCountry = getRndInteger(0, 244);
   let country = COUNTRY_CAPITAL[randomCountry].country;
@@ -57,12 +58,10 @@ app.intent("guess.capital", (conv, params) => {
   if (params.capital == answer) {
     conv.ask(`Congratulation's you gave the right answer!`);
     conv.ask(`Here is the next Question` + genreateRandomCountryQuestion());
-    conv.close(
-      `Great You Reached the Last Alphabet,You Remeber it all! Well Done. Bye for now, See you later`
-    );
   } else {
+    answer_count = answer_count - 1;
     conv.ask(
-      `Sorry, Let's start again, I coudln't get that.You can say any word from A to Z`
+      `Sorry, I Couldn't  get that, you have ${answer_count} more chances to say the anser right!`
     );
   }
 });
