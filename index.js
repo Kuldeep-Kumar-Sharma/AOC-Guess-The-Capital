@@ -1,11 +1,11 @@
 "use strict";
 //Initialize libraries
 const { dialogflow } = require("actions-on-google");
-const functions = require("firebase-functions");
-const { BasicCard, Image, Suggestions } = require("actions-on-google");
+const express = require("express");
+const bodyParser = require("body-parser");
 
 //Initialize contants
-const COUNTRY_CAPITAL = require("./country-by-capital");
+const COUNTRY_CAPITAL = require("./country-by-capital-city");
 const app = dialogflow({ debug: true });
 var answer = "";
 var answer_count = 4;
@@ -114,5 +114,4 @@ app.intent("guess.capital", (conv, params) => {
   }
 });
 
-// HTTP Cloud Function for Firebase handler
-exports.InspireMe = functions.https.onRequest(app);
+express().use(bodyParser.json(), app).listen(3000);
