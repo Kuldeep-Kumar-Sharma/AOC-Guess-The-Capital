@@ -104,13 +104,6 @@ app.intent("guess.capital", (conv, params) => {
     );
     return;
   }
-  console.log(params.capital_name);
-
-  console.log(params.capital_name.trim());
-
-  console.log(answer);
-  console.log(answer.trim());
-
   if (params.capital_name && params.capital_name.trim() == answer.trim()) {
     conv.ask(`Congratulation's you gave the right answer!`);
     conv.ask(`Here is the next Question` + generateRandomCountryQuestion());
