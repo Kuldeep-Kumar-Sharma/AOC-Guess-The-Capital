@@ -57,6 +57,7 @@ function getRndInteger(min, max) {
 function generateRandomCountryQuestion() {
   let randomCountry = getRndInteger(0, 244);
   let country = COUNTRY_CAPITAL[randomCountry].country;
+  answer = COUNTRY_CAPITAL[randomCountry].city;
   return `What is the Capital of ` + country;
 }
 
