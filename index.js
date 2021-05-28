@@ -75,6 +75,7 @@ function showScore() {
  */
 app.intent("guess.start", (conv) => {
   // [START asdk_js_basic_card]
+  console.log(conv);
   if (!conv.screen) {
     conv.ask(
       "Sorry, try this on a screen device or select the " +
