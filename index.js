@@ -75,7 +75,6 @@ function showScore() {
  */
 app.intent("guess.start", (conv) => {
   // [START asdk_js_basic_card]
-  console.log(conv);
   if (!conv.screen) {
     conv.ask(
       "Sorry, try this on a screen device or select the " +
@@ -104,7 +103,7 @@ app.intent("guess.capital", (conv, params) => {
     );
     return;
   }
-  if (params.capital == answer) {
+  if (params.capital_name == answer) {
     conv.ask(`Congratulation's you gave the right answer!`);
     conv.ask(`Here is the next Question` + genreateRandomCountryQuestion());
   } else {
