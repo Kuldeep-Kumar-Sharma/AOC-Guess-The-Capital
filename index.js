@@ -104,9 +104,9 @@ app.intent("guess.capital", (conv, params) => {
     );
     return;
   }
-  if (params.capital_name == answer) {
+  if (params.capital_name && params.capital_name.trim() == answer.trim()) {
     conv.ask(`Congratulation's you gave the right answer!`);
-    conv.ask(`Here is the next Question` + genreateRandomCountryQuestion());
+    conv.ask(`Here is the next Question` + generateRandomCountryQuestion());
   } else {
     answer_count = answer_count - 1;
     conv.ask(
