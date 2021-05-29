@@ -35,7 +35,7 @@ app.intent("guess.fallback", (conv) => {
     );
   } else {
     conv.close(
-      `Sorry Couldn't get that, can you say it again. In order to exit just say cancel or stop!`
+      `Sorry Couldn't get that, you can try again or in order to pass the question please say Pass and to exit just say cancel or stop!`
     );
   }
 });
@@ -91,6 +91,26 @@ app.intent("guess.start", (conv) => {
 });
 
 /**
+ *skip Intent.
+ *INTENT NAME: guess.skip
+ *Conversation Output: passing message and question again.
+ */
+app.intent("guess.skip", (conv) => {
+  // [START asdk_js_basic_card]
+  if (!conv.screen) {
+    conv.ask(
+      "Sorry, try this on a screen device or select the " +
+        "phone surface in the simulator."
+    );
+    return;
+  }
+  conv.ask(
+    `Alright I get that. I am passing this question for you, here is the next question`
+  );
+  conv.ask(generateRandomCountryQuestion());
+});
+
+/**
  *checking Intent.
  *INTENT NAME: guess.capital
  *Conversation Output: checking the capital,and another question.
@@ -109,9 +129,15 @@ app.intent("guess.capital", (conv, params) => {
     conv.ask(`Here is the next Question` + generateRandomCountryQuestion());
   } else {
     answer_count = answer_count - 1;
-    conv.ask(
-      `Sorry, I Couldn't  get that, you have ${answer_count} more chances to say the anser right!`
-    );
+    if (answer_count > 0) {
+      conv.ask(
+        `Sorry, I Couldn't  get that, you have ${answer_count} more chances to say the anser right!`
+      );
+    } else {
+      conv.close(
+        `Sorry Couldn't get that, you can try again or in order to pass the question please say Pass and to exit just say cancel or stop!`
+      );
+    }
   }
 });
 
