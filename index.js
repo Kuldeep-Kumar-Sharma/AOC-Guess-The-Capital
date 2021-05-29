@@ -140,6 +140,7 @@ app.intent("guess.capital", (conv, params) => {
   if (params.capital_name && params.capital_name.trim() == answer.trim()) {
     conv.ask(`Congratulation's you gave the right answer!`);
     conv.ask(`Here is the next Question` + generateRandomCountryQuestion());
+    score = score + 1;
   } else {
     answer_count = answer_count - 1;
     if (answer_count > 0) {
