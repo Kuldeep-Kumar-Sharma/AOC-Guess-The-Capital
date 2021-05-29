@@ -27,6 +27,9 @@ function initConversations() {
  *Conversation Output: shows score,cloing conversation.
  */
 app.intent("guess.quit", (conv) => {
+  console.log(cov);
+  console.log("guess.quit");
+
   conv.close(
     showScore() + `Thanks for Playing, Have a good day! come back again. Bye!`
   );
