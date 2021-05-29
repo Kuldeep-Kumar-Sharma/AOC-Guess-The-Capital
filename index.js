@@ -31,11 +31,11 @@ app.intent("guess.fallback", (conv) => {
   answer_count = answer_count - 1;
   if (answer_count > 0) {
     conv.ask(
-      `Sorry, I Couldn't  get that, you have ${answer_count} more chances to say the anser right!`
+      `Sorry, I Couldn't  get that, you have ${answer_count} more chances to say the right answer or in order to pass the question please say Pass and to exit just say cancel or stop!`
     );
   } else {
     conv.close(
-      `Sorry Couldn't get that, you can try again or in order to pass the question please say Pass and to exit just say cancel or stop!`
+      showScore() + `Thanks for Playing, Have a good day! come back again. Bye!`
     );
   }
 });
@@ -131,11 +131,12 @@ app.intent("guess.capital", (conv, params) => {
     answer_count = answer_count - 1;
     if (answer_count > 0) {
       conv.ask(
-        `Sorry, I Couldn't  get that, you have ${answer_count} more chances to say the anser right!`
+        `Sorry, I Couldn't  get that, you have ${answer_count} more chances to say the right answer or in order to pass the question please say Pass and to exit just say cancel or stop!`
       );
     } else {
       conv.close(
-        `Sorry Couldn't get that, you can try again or in order to pass the question please say Pass and to exit just say cancel or stop!`
+        showScore() +
+          `Thanks for Playing, Have a good day! come back again. Bye!`
       );
     }
   }
