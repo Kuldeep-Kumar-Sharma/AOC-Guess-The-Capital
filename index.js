@@ -26,7 +26,7 @@ function initConversations() {
  *INTENT NAME: guess.quit_app
  *Conversation Output: shows score,cloing conversation.
  */
-app.intent("guess.quit_app", (conv) => {
+app.intent("guess.quit", (conv) => {
   conv.close(
     showScore() + `Thanks for Playing, Have a good day! come back again. Bye!`
   );
