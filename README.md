@@ -18,8 +18,10 @@ Click on integrations in Dialog and reach at the [Actions on Google](https://con
 
 # Demo
 
-![Demo Video](https://github.com/Kuldeep-Kumar-Sharma/AOC-Guess-The-Capital/blob/master/Demo%20Video.mp4)
+[Demo Video](https://github.com/Kuldeep-Kumar-Sharma/AOC-Guess-The-Capital/blob/master/Demo%20Video.mp4)
 
+<!-- blank line -->
 <figure class="video_container">
   <iframe src="https://github.com/Kuldeep-Kumar-Sharma/AOC-Guess-The-Capital/blob/master/Demo%20Video.mp4" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
+<!-- blank line -->
