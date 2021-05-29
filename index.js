@@ -12,6 +12,16 @@ var answer_count = 4;
 var score = 0;
 
 /**
+ * @function initConversations()
+ * reset the score,answer and answer_count
+ */
+function initConversations() {
+  answer = "";
+  answer_count = 4;
+  score = 0;
+}
+
+/**
  *Quiting the app Intent.
  *INTENT NAME: guess.quit_app
  *Conversation Output: shows score,cloing conversation.
@@ -66,7 +76,9 @@ function generateRandomCountryQuestion() {
  * returns the score.
  */
 function showScore() {
-  return `Your Score is ${score}`;
+  let capturingTheLastScore = ` Your Score is ${score}`;
+  initConversations();
+  return capturingTheLastScore;
 }
 
 /**
