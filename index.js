@@ -76,7 +76,8 @@ function generateRandomCountryQuestion() {
  * returns the score.
  */
 function showScore() {
-  let capturingTheLastScore = ` Your Score is ${score}`;
+  let lastScore = score;
+  let capturingTheLastScore = `Your Score is ${lastScore}  `;
   initConversations();
   return capturingTheLastScore;
 }
