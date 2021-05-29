@@ -2,7 +2,7 @@
 
 Simple Actions on google repository for guessing the capital from the country.
 
-# install instructions
+# Setting Up
 
 On Root of the project.
 `npm install`
@@ -18,10 +18,8 @@ Click on integrations in Dialog and reach at the [Actions on Google](https://con
 
 # Demo
 
-[![Demo Video]](https://github.com/Kuldeep-Kumar-Sharma/AOC-Guess-The-Capital/blob/master/Demo%20Video.mp4)
+![Demo Video](https://github.com/Kuldeep-Kumar-Sharma/AOC-Guess-The-Capital/blob/master/Demo%20Video.mp4)
 
 <figure class="video_container">
-  <video controls="true" allowfullscreen="true" >
-    <source src="https://github.com/Kuldeep-Kumar-Sharma/AOC-Guess-The-Capital/blob/master/Demo%20Video.mp4" type="video/mp4">
-  </video>
+  <iframe src="https://github.com/Kuldeep-Kumar-Sharma/AOC-Guess-The-Capital/blob/master/Demo%20Video.mp4" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
